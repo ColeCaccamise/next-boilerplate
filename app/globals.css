@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles/btn.css';
+
+html {
+	height: 100%;
+	width: 100vw;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+@layer base {
+	:root {
+		--background: hsla(0, 0%, 7%, 100%);
+		--typography-strong: hsla(0, 0%, 100%, 100%);
+		--typography-weak: hsla(0, 0%, 100%, 78%);
+		--hover: hsla(0, 0%, 100%, 6%);
+		--fill: hsla(0, 0%, 100%, 2%);
+		--fill-solid: hsl(0, 0%, 10%, 100%);
+		--stroke-strong: hsla(0, 0%, 100%, 60%);
+		--stroke-medium: hsla(0, 0%, 100%, 16%);
+		--stroke-weak: hsla(0, 0%, 100%, 8%);
+
+		--brand: hsla(251, 100%, 66%, 100%);
+		--brand-stroke-strong: hsla(251, 100%, 66%, 80%);
+		--brand-stroke-weak: hsla(251, 100%, 66%, 20%);
+		--brand-fill: hsla(251, 100%, 66%, 5%);
+
+		--success: hsla(145, 32%, 56%, 100%);
+		--success-stroke-strong: hsla(145, 32%, 56%, 80%);
+		--success-stroke-weak: hsla(145, 8%, 20%, 100%);
+		--success-fill: hsla(145, 4%, 10%, 100%);
+
+		--error: hsla(360, 75%, 60%, 100%);
+		--error-stroke-strong: hsla(360, 75%, 60%, 80%);
+		--error-stroke-weak: hsla(360, 50%, 20%, 100%);
+		--error-fill: hsla(360, 25%, 10%, 100%);
+
+		--warning: hsla(42, 47%, 53%, 100%);
+		--warning-stroke-strong: hsla(42, 47%, 53%, 80%);
+		--warning-stroke-weak: hsla(42, 47%, 53%, 20%);
+		--warning-fill: hsla(42, 47%, 53%, 5%);
+	}
+
+	h1 {
+		@apply text-4xl font-bold text-typography-strong;
+	}
+
+	h2 {
+		@apply scroll-m-20 text-2xl font-semibold tracking-tight transition-colors text-typography-strong first:mt-0;
+	}
+
+	p {
+		@apply text-typography-weak;
+	}
+
+	a {
+		@apply no-underline transition-effect text-typography-weak;
+	}
+
+	a:hover {
+		@apply text-typography-strong;
+	}
+
+	ul {
+		@apply list-inside list-disc;
+	}
+
+	ol {
+		@apply list-inside list-decimal space-y-2;
+	}
+
+	li {
+		@apply text-typography-weak leading-8;
+	}
+
+	strong {
+		@apply text-typography-strong;
+	}
+
+	span {
+		@apply text-typography-weak;
+	}
+}
+
+@layer utilities {
+	.disabled {
+		@apply opacity-20 cursor-not-allowed;
+	}
+
+	.transition-effect {
+		@apply transition duration-200;
+	}
+
+	.link-brand {
+		@apply text-brand hover:text-brand hover:opacity-80;
+	}
+}
